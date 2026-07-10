@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wikipedia Vandalism Radar</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="mission-control">
+      <header>
+        <h1>WIKIPEDIA VANDALISM RADAR</h1>
+        <div class="status-indicator">
+          <div class="pulse"></div>
+          <span>LIVE CONNECTION: EventStreams</span>
+        </div>
+      </header>
+      
+      <div class="stats-panel">
+        <div class="stat-box">
+          <h3>Edits Analyzed</h3>
+          <p id="total-edits">0</p>
+        </div>
+        <div class="stat-box">
+          <h3>Anonymous Edits</h3>
+          <p id="anon-edits">0</p>
+        </div>
+        <div class="stat-box alert">
+          <h3>Suspicious Edits Detected</h3>
+          <p id="suspicious-edits">0</p>
+        </div>
+      </div>
+
+      <div class="radar-container">
+        <h2>Live Suspicious Edit Feed</h2>
+        <div class="feed-header">
+          <span>TIME</span>
+          <span>USER / IP</span>
+          <span>ARTICLE</span>
+          <span>FLAGS</span>
+          <span>ACTION</span>
+        </div>
+        <div id="radar-feed" class="feed">
+          <!-- Incoming edits injected here -->
+          <div class="waiting-message">Listening to global firehose... Waiting for suspicious activity...</div>
+        </div>
+      </div>
+
+      <div class="terminal-container">
+        <h2>RAW DATA STREAM (Filter Log)</h2>
+        <div id="terminal-feed" class="terminal-feed"></div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
